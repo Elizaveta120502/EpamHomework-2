@@ -11,6 +11,18 @@ import com.epam.jwd.validation.TaperExistence;
 public class TaperVolume implements FigureCalculation{
 
     private float PI = (float) 3.14;
+    private static TaperVolume taperVolume;
+
+    public static TaperVolume provideTaperVolume(){
+        if (taperVolume == null){
+            new TaperVolume();
+        }
+        return taperVolume;
+    }
+
+    private TaperVolume(){
+
+    }
 @Override
     public float calculate(Taper newTaper, Point newPoint ){
         try{

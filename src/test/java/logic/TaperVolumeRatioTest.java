@@ -19,7 +19,7 @@ import static com.epam.jwd.logic.CalculationTypes.TAPER_VOLUME_RATIO;
 public class TaperVolumeRatioTest {
     public TaperVolumeRatioTest() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
-    TaperVolumeRatio taperVolumeRatioTest = new TaperVolumeRatio();
+    TaperVolumeRatio taperVolumeRatioTest = TaperVolumeRatio.providerTaperVolumeRatio();
     TaperCalculationFactory factory = new TaperCalculationFactory();
     InputDataReader inputFactory = new InputDataReader();
     Taper taper = new Taper();

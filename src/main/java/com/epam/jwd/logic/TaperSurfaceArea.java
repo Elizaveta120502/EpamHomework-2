@@ -12,6 +12,19 @@ import com.epam.jwd.validation.TaperExistence;
 public class TaperSurfaceArea implements FigureCalculation {
 
     private float PI = (float) 3.14;
+    private static TaperSurfaceArea taperSurfaceArea;
+
+
+    public static TaperSurfaceArea provideTaperSurfaceArea(){
+        if (taperSurfaceArea == null){
+            new TaperSurfaceArea();
+        }
+        return taperSurfaceArea;
+    }
+
+    private TaperSurfaceArea() {
+
+    }
 
 @Override
     public float calculate (Taper taper ,Point point) {
