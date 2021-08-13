@@ -8,9 +8,8 @@ public interface Published {
 
     void removeSubscriber(Subscriber subscriber);
 
-    void notifySubscriber(Subscriber subscriber);
-//        subscriber.update(TaperSurfaceArea.provideTaperSurfaceArea(),TaperVolume.provideTaperVolume(),
-//                TaperVolumeRatio.providerTaperVolumeRatio());
+    void notifySubscriber();
+
 
 
 }
