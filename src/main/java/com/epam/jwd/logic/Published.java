@@ -9,7 +9,7 @@ public interface Published {
 
     void removeSubscriber(TaperRegister taperRegister);
 
-    void notifySubscriber();
+    void notifySubscriber(TaperRegister taperRegister);
 
 
 

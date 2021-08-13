@@ -14,6 +14,7 @@ import java.io.IOException;
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logger.LoggerProvider;
+import com.epam.jwd.logic.TaperRepository;
 
 
 public class InputDataReader implements Readable {

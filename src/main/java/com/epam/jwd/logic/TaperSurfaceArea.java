@@ -27,7 +27,7 @@ public class TaperSurfaceArea implements FigureCalculation {
     }
 
 @Override
-    public float calculate (Taper taper ,Point point) {
+    public float calculate (Taper taper , Point point) {
         try{
             new TaperBaseOnPlain().defineTaperBasePlane(taper,point);
         } catch (InvalidInputDataException e){
