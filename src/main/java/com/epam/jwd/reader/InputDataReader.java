@@ -17,7 +17,7 @@ import com.epam.jwd.logger.LoggerProvider;
 
 
 public class InputDataReader implements Readable {
-    private static final String FILE_NAME = "C:/Users/ЛИЗАВЕТА/IdeaProjects/homework-2-epam-courses/src/main/resources/InputData.txt";
+    private static final String FILE_NAME = "C:/Epam/InputData1.txt";
 
     public InputDataReader() {
 

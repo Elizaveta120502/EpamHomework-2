@@ -1,12 +1,13 @@
 package com.epam.jwd.logic;
 
 import com.epam.jwd.register.Subscriber;
+import com.epam.jwd.register.TaperRegister;
 
 
 public interface Published {
-    void addSubscriber(Subscriber subscriber);
+    void addSubscriber(TaperRegister taperRegister);
 
-    void removeSubscriber(Subscriber subscriber);
+    void removeSubscriber(TaperRegister taperRegister);
 
     void notifySubscriber();
 

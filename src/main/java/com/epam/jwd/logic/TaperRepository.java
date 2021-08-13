@@ -4,9 +4,11 @@ import com.epam.jwd.entity.Point;
 import com.epam.jwd.entity.Taper;
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
+import com.epam.jwd.logger.LoggerProvider;
 import com.epam.jwd.reader.InputDataReader;
 import com.epam.jwd.register.Subscriber;
-import jdk.internal.loader.AbstractClassLoaderValue;
+import com.epam.jwd.register.TaperRegister;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,18 +26,18 @@ public class TaperRepository implements Published {
     Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
     Point newPoint = new Point(inputFactory.readInputDataPoint(point));
 
-    public TaperRepository() throws InvalidInputDataException, IOException, NotEnoughDataException {
+    public TaperRepository(TaperRegister taperRegister) throws InvalidInputDataException, IOException, NotEnoughDataException {
         tapers = new ArrayList();
     }
 
     @Override
-    public void addSubscriber(Subscriber subscriber) {
-        tapers.add(subscriber);
+    public void addSubscriber(TaperRegister taperRegister) {
+        tapers.add(taperRegister);
     }
 
     @Override
-    public void removeSubscriber(Subscriber subscriber) {
-        int i = tapers.indexOf(subscriber);
+    public void removeSubscriber(TaperRegister taperRegister) {
+        int i = tapers.indexOf(taperRegister);
         if (i > 0) {
             tapers.remove(i);
         }
@@ -44,16 +46,18 @@ public class TaperRepository implements Published {
     @Override
     public void notifySubscriber() {
         for (int i = 0; i < tapers.size(); i++) {
-            Subscriber subscriber = (Subscriber)tapers.get(i);
-            subscriber.update(taperSurfaceArea, taperVolume, taperVolumeRatio);
+            TaperRegister taperRegister = (TaperRegister) tapers.get(i);
+            taperRegister.update(taperSurfaceArea, taperVolume, taperVolumeRatio);
         }
+
     }
 
-    public void changeTaperParams(TaperSurfaceArea taperSurfaceArea, TaperVolume taperVolume,
-                                  TaperVolumeRatio taperVolumeRatio) {
+    public void changeTaperParams(FigureCalculation taperSurfaceArea, FigureCalculation taperVolume,
+                                  FigureCalculation taperVolumeRatio) {
         taperSurfaceArea.calculate(taper, point);
         taperVolume.calculate(taper, point);
         taperVolumeRatio.calculate(taper, point);
+        notifySubscriber();
     }
 
 }
