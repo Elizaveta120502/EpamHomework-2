@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5ca21dc-e3b8-47fa-9f1d-27eefb560071" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/Published.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/register/Subscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/register/TaperRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/homework-2-epam-courses-release.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/homework-2-epam-courses-release.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/jwd/factory/TaperCalculationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/factory/TaperCalculationFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperSurfaceArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperSurfaceArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperVolume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperVolume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperVolumeRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/logic/TaperVolumeRatio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/jwd/register/Subscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/register/Subscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/jwd/register/TaperRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/jwd/register/TaperRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/logic/TaperSurfaceAreaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/TaperSurfaceAreaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/logic/TaperVolumeRatioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/TaperVolumeRatioTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/logic/TaperVolumeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/TaperVolumeTest.java" afterDir="false" />
@@ -59,15 +61,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,7 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1628789095415</updated>
       <workItem from="1628789161379" duration="2713000" />
-      <workItem from="1628797511771" duration="1234000" />
+      <workItem from="1628797511771" duration="2580000" />
+      <workItem from="1628841968110" duration="4824000" />
     </task>
     <servers />
   </component>
@@ -102,10 +103,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/homework_2_epam_courses$TaperSurfaceAreaTest_calculateTaperSurfaceArea.ic" NAME="TaperSurfaceAreaTest.calculateTaperSurfaceArea Coverage Results" MODIFIED="1628529611533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/homework_2_epam_courses$TaperVolumeRatioTest.ic" NAME="TaperVolumeRatioTest Coverage Results" MODIFIED="1628529662163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>logic.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/homework_2_epam_courses$TaperVolumeRatioTest.ic" NAME="TaperVolumeRatioTest Coverage Results" MODIFIED="1628529662163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/homework_2_epam_courses$TaperSurfaceAreaTest_calculateTaperSurfaceArea.ic" NAME="TaperSurfaceAreaTest.calculateTaperSurfaceArea Coverage Results" MODIFIED="1628529611533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>logic.*</FILTER>
     </SUITE>
   </component>

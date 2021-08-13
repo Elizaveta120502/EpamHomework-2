@@ -17,13 +17,13 @@ public class TaperCalculationFactory {
         FigureCalculation toReturn;
         switch (type) {
             case TAPER_SURFACE_AREA:
-                toReturn = TaperSurfaceArea.provideTaperSurfaceArea();
+                toReturn = new TaperSurfaceArea();
                 break;
             case TAPER_VOLUME:
-                toReturn =  TaperVolume.provideTaperVolume();
+                toReturn = new TaperVolume();
                 break;
             case TAPER_VOLUME_RATIO:
-                toReturn =  TaperVolumeRatio.providerTaperVolumeRatio();
+                toReturn =  new TaperVolumeRatio();
                 break;
             default:
                 throw new InvalidInputDataException();

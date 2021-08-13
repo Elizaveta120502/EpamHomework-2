@@ -21,7 +21,7 @@ public class TaperVolumeTest {
     public TaperVolumeTest() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
 
-    TaperVolume taperVolumeTest = TaperVolume.provideTaperVolume();
+    TaperVolume taperVolumeTest = new TaperVolume();
     TaperCalculationFactory factory = new TaperCalculationFactory();
     InputDataReader inputFactory = new InputDataReader();
     Taper taper = new Taper();

@@ -20,7 +20,7 @@ import static com.epam.jwd.logic.CalculationTypes.TAPER_SURFACE_AREA;
 public class TaperSurfaceAreaTest {
     public TaperSurfaceAreaTest() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
-    TaperSurfaceArea taperSurfaceAreaTest = TaperSurfaceArea.provideTaperSurfaceArea();
+    TaperSurfaceArea taperSurfaceAreaTest = new TaperSurfaceArea();
     TaperCalculationFactory factory = new TaperCalculationFactory();
     InputDataReader inputFactory = new InputDataReader();
     Taper taper = new Taper();

@@ -13,15 +13,15 @@ import com.epam.jwd.validation.TaperExistence;
 
 public class TaperVolumeRatio implements FigureCalculation{
     private static final int RATIO_CONST = 1;
-    private static TaperVolumeRatio taperVolumeRatio;
-
-    public static TaperVolumeRatio providerTaperVolumeRatio(){
-        if (taperVolumeRatio == null){
-            new TaperVolumeRatio();
-        }
-        return taperVolumeRatio;
-    }
-    private TaperVolumeRatio(){
+//    private static TaperVolumeRatio taperVolumeRatio;
+//
+//    public static TaperVolumeRatio providerTaperVolumeRatio(){
+//        if (taperVolumeRatio == null){
+//            new TaperVolumeRatio();
+//        }
+//        return taperVolumeRatio;
+//    }
+    public TaperVolumeRatio(){
 
     }
 @Override
