@@ -23,15 +23,15 @@ public class TaperSurfaceAreaTest {
     TaperSurfaceArea taperSurfaceAreaTest = new TaperSurfaceArea();
     TaperCalculationFactory factory = new TaperCalculationFactory();
     InputDataReader inputFactory = new InputDataReader();
-    Taper taper = new Taper();
-    Point point = new Point();
-    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
-    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
-
-    @Test
-    public void calculateTaperSurfaceArea() throws InvalidInputDataException {
-        Assert.assertEquals(factory.getFigureCalculation(TAPER_SURFACE_AREA).calculate(taper,point),taperSurfaceAreaTest.calculate(taper,point));
-
-    }
+//    Taper taper = new Taper();
+//    Point point = new Point();
+//    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
+//    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
+//
+//    @Test
+//    public void calculateTaperSurfaceArea() throws InvalidInputDataException {
+//        Assert.assertEquals(factory.getFigureCalculation(TAPER_SURFACE_AREA).calculate(taper,point),taperSurfaceAreaTest.calculate(taper,point));
+//
+//    }
 
 }

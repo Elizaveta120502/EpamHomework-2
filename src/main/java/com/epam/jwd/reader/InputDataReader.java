@@ -10,6 +10,7 @@ import java.io.FileReader;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
@@ -19,6 +20,23 @@ import com.epam.jwd.logic.TaperRepository;
 
 public class InputDataReader implements Readable {
     private static final String FILE_NAME = "C:/Epam/InputData1.txt";
+    private static InputDataReader inputDataReader;
+
+
+
+
+
+
+
+    public static InputDataReader provideInputDataReaderObject(){
+        if (inputDataReader == null ){
+            new InputDataReader();
+        }
+        return inputDataReader;
+    }
+
+
+
 
     public InputDataReader() {
 
@@ -26,12 +44,11 @@ public class InputDataReader implements Readable {
 
 
     @Override
-    public Taper readInputDataTaper(Taper taper) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException {
+    public ArrayList<Taper> readInputDataTaper(Taper taper) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException {
+        ArrayList<Taper> taperArrayList = null;
         try {
 
-
-
-
+            taperArrayList = new ArrayList<>();
             File file = new File(FILE_NAME);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -52,7 +69,8 @@ public class InputDataReader implements Readable {
                             LoggerProvider.getLOG().info("r = " + taper.getTaperTrancatedRadius() + "\n");
 
                             taper = new Taper(taper.getTaperBaseRadius(), taper.getTaperHeight(), taper.getTaperTrancatedRadius());
-
+                            taperArrayList.add(taper);
+                            LoggerProvider.getLOG().info(taperArrayList);
 
                         } else {
                             LoggerProvider.getLOG().info("buffer is ready: ", bufferedReader.ready());
@@ -81,15 +99,16 @@ public class InputDataReader implements Readable {
         }
 
 
-        return taper;
+        return taperArrayList;
     }
 
 
     @Override
-    public Point readInputDataPoint(Point point) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException {
+    public ArrayList<Point> readInputDataPoint(Point point) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException {
+        ArrayList<Point> pointArrayList = null;
         try {
 
-
+            pointArrayList = new ArrayList<Point>();
             File file = new File(FILE_NAME);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -98,7 +117,7 @@ public class InputDataReader implements Readable {
 
             while ((line = bufferedReader.readLine()) != null) {
                 String[] split = line.split("/");
-                if (line.matches("[a-zA-Z]" ) == false) {
+                if (line.matches("[a-zA-Z]") == false) {
                     try {
                         if (split.length == 11) {
 
@@ -122,7 +141,8 @@ public class InputDataReader implements Readable {
 
                             point = new Point(point.getAbscissaAxis1(), point.getOrdinateAxis1(), point.getAbscissaAxis2(), point.getOrdinateAxis2(),
                                     point.getAbscissaAxis3(), point.getOrdinateAxis3(), point.getAbscissaAxis4(), point.getOrdinateAxis4());
-
+                            pointArrayList.add(point);
+                            LoggerProvider.getLOG().info(pointArrayList);
 
                         } else {
                             LoggerProvider.getLOG().info("buffer is ready: ", bufferedReader.ready());
@@ -151,7 +171,7 @@ public class InputDataReader implements Readable {
         }
 
 
-        return point;
+        return pointArrayList;
     }
 
 

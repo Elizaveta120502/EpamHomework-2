@@ -1,7 +1,6 @@
 package com.epam.jwd.register;
 
-import com.epam.jwd.logger.LoggerProvider;
-import com.epam.jwd.logic.*;
+import com.epam.jwd.logic.Published;
 
 public class TaperRegister implements Subscriber {
     private float taperSurfaceArea;
@@ -23,9 +22,9 @@ public class TaperRegister implements Subscriber {
 
     @Override
     public void update(float taperSurfaceArea,float taperVolume,float taperVolumeRatio) {
-      this.taperSurfaceArea = taperSurfaceArea;
-      this.taperVolume = taperVolume;
-      this.taperVolumeRatio = taperVolumeRatio;
+        taperSurfaceArea = this.taperSurfaceArea  ;
+        taperVolume = this.taperVolume  ;
+        taperVolumeRatio = this.taperVolumeRatio  ;
     }
 
 

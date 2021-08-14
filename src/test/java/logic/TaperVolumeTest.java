@@ -26,15 +26,15 @@ public class TaperVolumeTest {
     InputDataReader inputFactory = new InputDataReader();
     Taper taper = new Taper();
     Point point = new Point();
-    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
-    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
-
-
-    @Test
-    public void calculateTaperVolume() throws InvalidInputDataException {
-        Assert.assertEquals(factory.getFigureCalculation(TAPER_VOLUME).calculate(taper,point),taperVolumeTest.calculate(taper,point));
-
-    }
+//    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
+//    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
+//
+//
+//    @Test
+//    public void calculateTaperVolume() throws InvalidInputDataException {
+//        Assert.assertEquals(factory.getFigureCalculation(TAPER_VOLUME).calculate(taper,point),taperVolumeTest.calculate(taper,point));
+//
+//    }
 
 
 

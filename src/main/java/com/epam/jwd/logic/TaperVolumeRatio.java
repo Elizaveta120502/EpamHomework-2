@@ -2,6 +2,7 @@ package com.epam.jwd.logic;
 
 
 import java.lang.Math;
+import java.util.ArrayList;
 
 import com.epam.jwd.entity.Point;
 import com.epam.jwd.entity.Taper;
@@ -13,31 +14,32 @@ import com.epam.jwd.validation.TaperExistence;
 
 public class TaperVolumeRatio implements FigureCalculation{
     private static final int RATIO_CONST = 1;
-//    private static TaperVolumeRatio taperVolumeRatio;
-//
-//    public static TaperVolumeRatio providerTaperVolumeRatio(){
-//        if (taperVolumeRatio == null){
-//            new TaperVolumeRatio();
-//        }
-//        return taperVolumeRatio;
-//    }
+
     public TaperVolumeRatio(){
 
     }
 @Override
-    public float calculate(Taper newTaper, Point newPoint){
+    public float calculate(ArrayList<Taper> taperArrayList, ArrayList<Point>  pointArrayList){
+    float ratio = 0;
+
+    for (int i = 0 , j =0; i < taperArrayList.size() -1 && j < pointArrayList.size()-1; i++,j++) {
         try{
-            new TaperBaseOnPlain().defineTaperBasePlane(newTaper,newPoint);
+            new TaperBaseOnPlain().defineTaperBasePlane(taperArrayList.get(i),pointArrayList.get(j));
         } catch (InvalidInputDataException e){
             LoggerProvider.getLOG().error("Calculating Taper Volume Ratio failed.");
         }
+
         try {
-            new TaperExistence().detectTaperExistance(newTaper);
+            new TaperExistence().detectTaperExistance(taperArrayList.get(i));
         } catch (InvalidInputDataException e){
             LoggerProvider.getLOG().error("Value CAN NOT be negative");
         }
-        float ratio = (float) (RATIO_CONST - Math.pow((newTaper.getTaperTrancatedRadius()/newTaper.getTaperBaseRadius()),3));
-        LoggerProvider.getLOG().info("Volume ratio calculated correctly: "   + ratio);
+
+
+         ratio = (float) (RATIO_CONST - Math.pow((taperArrayList.get(i).getTaperTrancatedRadius()/taperArrayList.get(i).getTaperBaseRadius()),3));
+        LoggerProvider.getLOG().info("Volume ratio calculated correctly: "   + ratio +"\n");
+    }
         return ratio;
     }
+
 }
