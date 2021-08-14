@@ -6,13 +6,14 @@ public class TaperRegister implements Subscriber {
     private float taperSurfaceArea;
     private float taperVolume;
     private float taperVolumeRatio;
-    private Published published;
+  //  private Published published;
+    private int id;
 
-    public TaperRegister (Published published){
-        this.published = published;
-        published.addSubscriber(this);
-
-    }
+//    public TaperRegister (Published published){
+//        this.published = published;
+//        published.addTaper(this);
+//
+//    }
 
     public TaperRegister(float taperSurfaceArea, float taperVolume, float taperVolumeRatio) {
         this.taperSurfaceArea = taperSurfaceArea;
@@ -21,10 +22,11 @@ public class TaperRegister implements Subscriber {
     }
 
     @Override
-    public void update(float taperSurfaceArea,float taperVolume,float taperVolumeRatio) {
+    public void update(float taperSurfaceArea,float taperVolume,float taperVolumeRatio , int id) {
         taperSurfaceArea = this.taperSurfaceArea  ;
         taperVolume = this.taperVolume  ;
         taperVolumeRatio = this.taperVolumeRatio  ;
+        id = this.id;
     }
 
 

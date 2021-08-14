@@ -23,7 +23,7 @@ public class TaperVolumeTest {
 
     TaperVolume taperVolumeTest = new TaperVolume();
     TaperCalculationFactory factory = new TaperCalculationFactory();
-    InputDataReader inputFactory = new InputDataReader();
+    //InputDataReader inputFactory = new InputDataReader();
     Taper taper = new Taper();
     Point point = new Point();
 //    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));

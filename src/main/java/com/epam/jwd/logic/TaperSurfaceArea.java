@@ -3,11 +3,14 @@ package com.epam.jwd.logic;
 import com.epam.jwd.entity.Taper;
 import com.epam.jwd.entity.Point;
 import com.epam.jwd.exception.InvalidInputDataException;
+import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logger.LoggerProvider;
 
+import com.epam.jwd.register.TaperRegister;
 import com.epam.jwd.validation.TaperBaseOnPlain;
 import com.epam.jwd.validation.TaperExistence;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -16,15 +19,16 @@ public class TaperSurfaceArea implements FigureCalculation {
     private float PI = (float) 3.14;
 
 
-    public TaperSurfaceArea() {
+    public TaperSurfaceArea() throws InvalidInputDataException, IOException, NotEnoughDataException {
 
     }
 
     @Override
-    public float calculate(ArrayList<Taper> taperArrayList, ArrayList<Point>  pointArrayList) {
+    public float calculate(ArrayList<Taper> taperArrayList, ArrayList<Point> pointArrayList) {
         float area = 0;
 
-        for (int i = 0 , j = 0; i < taperArrayList.size() -1   && j < pointArrayList.size()-1; i++,j++) {
+
+        for (int i = 0, j = 0; i < taperArrayList.size() - 1 && j < pointArrayList.size() - 1; i++, j++) {
             try {
 
                 new TaperBaseOnPlain().defineTaperBasePlane(taperArrayList.get(i), pointArrayList.get(j));
@@ -37,15 +41,16 @@ public class TaperSurfaceArea implements FigureCalculation {
             } catch (InvalidInputDataException e) {
                 LoggerProvider.getLOG().error("Can NOT build this figure");
             }
+
             area = (float) ((PI * Math.pow(taperArrayList.get(i).getTaperBaseRadius(), 2)) +
                     (PI * taperArrayList.get(i).getTaperBaseRadius() * (Math.pow(taperArrayList.get(i).getTaperBaseRadius() *
                             taperArrayList.get(i).getTaperBaseRadius() + taperArrayList.get(i).getTaperHeight() * taperArrayList.get(i).getTaperHeight(), 1 / 2))));
-            LoggerProvider.getLOG().info("Surface area calculated correctly:  " + area  +"\n");
+            LoggerProvider.getLOG().info("Surface area calculated correctly:  " + area + "\n" +TaperChangingClass.createTaperID(i));
 
         }
-            return area;
+        return area;
 
-        }
     }
+}
 
 

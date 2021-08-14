@@ -45,7 +45,7 @@ public class TaperVolume implements FigureCalculation {
 
 
             volume = (float) (PI * Math.pow(taperArrayList.get(i).getTaperBaseRadius(), 2) * taperArrayList.get(i).getTaperHeight());
-            LoggerProvider.getLOG().info("Volume calculated correctly:  " + volume  +"\n");
+            LoggerProvider.getLOG().info("Volume calculated correctly:  " + volume  +"\n"  + TaperChangingClass.createTaperID(i));
         }
         return volume;
     }

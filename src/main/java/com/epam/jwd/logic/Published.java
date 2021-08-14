@@ -5,11 +5,11 @@ import com.epam.jwd.register.TaperRegister;
 
 
 public interface Published {
-    void addSubscriber(TaperRegister taperRegister);
-
-    void removeSubscriber(TaperRegister taperRegister);
-
-    void notifySubscriber(TaperRegister taperRegister);
+//    void addTaper(TaperRegister taperRegister);
+//
+//    void removeTaper(TaperRegister taperRegister);
+//
+//    void notifySubscriber(TaperRegister taperRegister);
 
 
 

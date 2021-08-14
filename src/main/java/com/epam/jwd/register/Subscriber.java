@@ -7,6 +7,6 @@ import com.epam.jwd.logic.TaperVolumeRatio;
 
 public interface Subscriber {
 
-     void update(float taperSurfaceArea,float taperVolume,float taperVolumeRatio);
+     void update(float taperSurfaceArea,float taperVolume,float taperVolumeRatio,int id);
 
 }

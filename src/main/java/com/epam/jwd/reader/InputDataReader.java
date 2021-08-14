@@ -15,27 +15,20 @@ import java.util.ArrayList;
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logger.LoggerProvider;
-import com.epam.jwd.logic.TaperRepository;
 
 
 public class InputDataReader implements Readable {
     private static final String FILE_NAME = "C:/Epam/InputData1.txt";
-    private static InputDataReader inputDataReader;
-
-
-
-
-
-
-
-    public static InputDataReader provideInputDataReaderObject(){
-        if (inputDataReader == null ){
-            new InputDataReader();
-        }
-        return inputDataReader;
-    }
-
-
+//    private static InputDataReader inputDataReader = null;
+//
+//
+//    public static InputDataReader provideInputDataReaderObject() {
+//
+//        if (inputDataReader == null) {
+//            new InputDataReader();
+//        }
+//        return inputDataReader;
+//    }
 
 
     public InputDataReader() {
@@ -64,13 +57,13 @@ public class InputDataReader implements Readable {
                             taper.setTaperHeight(Float.parseFloat(split[1]));  //H
                             taper.setTaperTrancatedRadius(Float.parseFloat(split[2]));  //r
 
-                            LoggerProvider.getLOG().info("R = " + taper.getTaperBaseRadius());
-                            LoggerProvider.getLOG().info("H = " + taper.getTaperHeight());
-                            LoggerProvider.getLOG().info("r = " + taper.getTaperTrancatedRadius() + "\n");
+//                            LoggerProvider.getLOG().info("R = " + taper.getTaperBaseRadius());
+//                            LoggerProvider.getLOG().info("H = " + taper.getTaperHeight());
+//                            LoggerProvider.getLOG().info("r = " + taper.getTaperTrancatedRadius() + "\n");
 
                             taper = new Taper(taper.getTaperBaseRadius(), taper.getTaperHeight(), taper.getTaperTrancatedRadius());
                             taperArrayList.add(taper);
-                            LoggerProvider.getLOG().info(taperArrayList);
+                            // LoggerProvider.getLOG().info(taperArrayList);
 
                         } else {
                             LoggerProvider.getLOG().info("buffer is ready: ", bufferedReader.ready());
@@ -130,19 +123,19 @@ public class InputDataReader implements Readable {
                             point.setAbscissaAxis4(Float.parseFloat(split[9])); //x4
                             point.setOrdinateAxis4(Float.parseFloat(split[10]));  //y4
 
-                            LoggerProvider.getLOG().info("x1 = " + point.getAbscissaAxis1());
-                            LoggerProvider.getLOG().info("y1 = " + point.getOrdinateAxis1());
-                            LoggerProvider.getLOG().info("x2 = " + point.getAbscissaAxis2());
-                            LoggerProvider.getLOG().info("y2 = " + point.getOrdinateAxis2());
-                            LoggerProvider.getLOG().info("x3 = " + point.getAbscissaAxis3());
-                            LoggerProvider.getLOG().info("y3 = " + point.getOrdinateAxis3());
-                            LoggerProvider.getLOG().info("x4 = " + point.getAbscissaAxis4());
-                            LoggerProvider.getLOG().info("y4 = " + point.getOrdinateAxis4() + "\n");
+//                            LoggerProvider.getLOG().info("x1 = " + point.getAbscissaAxis1());
+//                            LoggerProvider.getLOG().info("y1 = " + point.getOrdinateAxis1());
+//                            LoggerProvider.getLOG().info("x2 = " + point.getAbscissaAxis2());
+//                            LoggerProvider.getLOG().info("y2 = " + point.getOrdinateAxis2());
+//                            LoggerProvider.getLOG().info("x3 = " + point.getAbscissaAxis3());
+//                            LoggerProvider.getLOG().info("y3 = " + point.getOrdinateAxis3());
+//                            LoggerProvider.getLOG().info("x4 = " + point.getAbscissaAxis4());
+//                            LoggerProvider.getLOG().info("y4 = " + point.getOrdinateAxis4() + "\n");
 
                             point = new Point(point.getAbscissaAxis1(), point.getOrdinateAxis1(), point.getAbscissaAxis2(), point.getOrdinateAxis2(),
                                     point.getAbscissaAxis3(), point.getOrdinateAxis3(), point.getAbscissaAxis4(), point.getOrdinateAxis4());
                             pointArrayList.add(point);
-                            LoggerProvider.getLOG().info(pointArrayList);
+                            // LoggerProvider.getLOG().info(pointArrayList);
 
                         } else {
                             LoggerProvider.getLOG().info("buffer is ready: ", bufferedReader.ready());

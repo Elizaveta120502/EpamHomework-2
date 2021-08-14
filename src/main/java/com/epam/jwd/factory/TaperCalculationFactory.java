@@ -13,7 +13,7 @@ public class TaperCalculationFactory {
     public TaperCalculationFactory() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
 
-    public FigureCalculation getFigureCalculation(CalculationTypes type) throws InvalidInputDataException{
+    public FigureCalculation getFigureCalculation(CalculationTypes type) throws InvalidInputDataException, IOException, NotEnoughDataException {
         FigureCalculation toReturn;
         switch (type) {
             case TAPER_SURFACE_AREA:

@@ -37,7 +37,7 @@ public class TaperVolumeRatio implements FigureCalculation{
 
 
          ratio = (float) (RATIO_CONST - Math.pow((taperArrayList.get(i).getTaperTrancatedRadius()/taperArrayList.get(i).getTaperBaseRadius()),3));
-        LoggerProvider.getLOG().info("Volume ratio calculated correctly: "   + ratio +"\n");
+        LoggerProvider.getLOG().info("Volume ratio calculated correctly: "   + ratio +"\n" + TaperChangingClass.createTaperID(i));
     }
         return ratio;
     }
