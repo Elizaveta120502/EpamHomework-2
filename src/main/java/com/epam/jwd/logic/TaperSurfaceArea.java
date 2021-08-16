@@ -24,8 +24,9 @@ public class TaperSurfaceArea implements FigureCalculation {
     }
 
     @Override
-    public float calculate(ArrayList<Taper> taperArrayList, ArrayList<Point> pointArrayList) {
+    public ArrayList<Float> calculate(ArrayList<Taper> taperArrayList, ArrayList<Point> pointArrayList) {
         float area = 0;
+        ArrayList<Float> taperSurfaceAreaList = new ArrayList<Float>();
 
 
         for (int i = 0, j = 0; i < taperArrayList.size() - 1 && j < pointArrayList.size() - 1; i++, j++) {
@@ -45,10 +46,11 @@ public class TaperSurfaceArea implements FigureCalculation {
             area = (float) ((PI * Math.pow(taperArrayList.get(i).getTaperBaseRadius(), 2)) +
                     (PI * taperArrayList.get(i).getTaperBaseRadius() * (Math.pow(taperArrayList.get(i).getTaperBaseRadius() *
                             taperArrayList.get(i).getTaperBaseRadius() + taperArrayList.get(i).getTaperHeight() * taperArrayList.get(i).getTaperHeight(), 1 / 2))));
-            LoggerProvider.getLOG().info("Surface area calculated correctly:  " + area + "\n" +TaperChangingClass.createTaperID(i));
+            taperSurfaceAreaList.add(area);
+            LoggerProvider.getLOG().info("Surface area calculated correctly:  " + area + "\n");
 
         }
-        return area;
+        return taperSurfaceAreaList;
 
     }
 }

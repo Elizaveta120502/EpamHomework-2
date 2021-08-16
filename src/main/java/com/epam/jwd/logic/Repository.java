@@ -12,20 +12,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface Repository {
-   int addTaper(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
-                 ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException;
-
-    int removeAllTaper(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
+    int addAllTaper(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
                     ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException;
 
+    int removeAllTaper(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
+                       ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException;
 
-   // TaperRegister changeTaper();
 
-    TaperRegister certainRangeTaperParameter();
+    void certainRangeTaperParameter(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
+                                    ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList);
 
-    TaperRegister findByID();
+    void findCoordinatesByID(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
+                             ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList);
 
-    TaperRegister findByName();
 
-    TaperRegister defineIntersectsTheOrigin();
+    void defineIntersectsTheOrigin(ArrayList<Point> newPointArrayList);
+
+    TaperRegister changeTaper (TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
+                               ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException;
 }

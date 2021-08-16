@@ -108,8 +108,8 @@ public class InputDataReader implements Readable {
 
             String line;
 
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] split = line.split("/");
+               while ((line = bufferedReader.readLine()) != null) {
+                  String[] split = line.split("/");
                 if (line.matches("[a-zA-Z]") == false) {
                     try {
                         if (split.length == 11) {

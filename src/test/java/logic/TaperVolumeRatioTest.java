@@ -19,19 +19,21 @@ import static com.epam.jwd.logic.CalculationTypes.TAPER_VOLUME_RATIO;
 public class TaperVolumeRatioTest {
     public TaperVolumeRatioTest() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
+
     TaperVolumeRatio taperVolumeRatioTest = new TaperVolumeRatio();
     TaperCalculationFactory factory = new TaperCalculationFactory();
-   // InputDataReader inputFactory = new InputDataReader();
+    InputDataReader inputDataReader = new InputDataReader();
     Taper taper = new Taper();
     Point point = new Point();
-//    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
-//    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
-//
-//    @Test
-//    public void calculateTaperVolume() throws InvalidInputDataException {
-//        Assert.assertEquals(factory.getFigureCalculation(TAPER_VOLUME_RATIO).calculate(taper,point),taperVolumeRatioTest.calculate(taper,point));
-//
-//    }
+    Taper newTaper = new Taper(inputDataReader.readInputDataTaper(taper));
+    Point newPoint = new Point(inputDataReader.readInputDataPoint(point));
+
+    @Test
+    public void calculateTaperVolume() throws InvalidInputDataException, IOException, NotEnoughDataException {
+        Assert.assertEquals(factory.getFigureCalculation(TAPER_VOLUME_RATIO).calculate(inputDataReader.readInputDataTaper(taper),
+                inputDataReader.readInputDataPoint(point)), taperVolumeRatioTest.calculate(inputDataReader.readInputDataTaper(taper), inputDataReader.readInputDataPoint(point)));
+
+    }
 
 
 }

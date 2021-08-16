@@ -2,35 +2,44 @@ package com.epam.jwd.register;
 
 import com.epam.jwd.logic.Published;
 
+import java.util.ArrayList;
+
 public class TaperRegister implements Subscriber {
-    private float taperSurfaceArea;
-    private float taperVolume;
-    private float taperVolumeRatio;
-  //  private Published published;
-    private int id;
+    private ArrayList<Float> taperSurfaceArea;
+    private ArrayList<Float> taperVolume;
 
-//    public TaperRegister (Published published){
-//        this.published = published;
-//        published.addTaper(this);
-//
-//    }
+    public ArrayList<Float> getTaperSurfaceArea() {
+        return taperSurfaceArea;
+    }
 
-    public TaperRegister(float taperSurfaceArea, float taperVolume, float taperVolumeRatio) {
-        this.taperSurfaceArea = taperSurfaceArea;
-        this.taperVolume = taperVolume;
-        this.taperVolumeRatio = taperVolumeRatio;
+    public ArrayList<Float> getTaperVolume() {
+        return taperVolume;
+    }
+
+    public ArrayList<Float> getTaperVolumeRatio() {
+        return taperVolumeRatio;
+    }
+
+    private ArrayList<Float> taperVolumeRatio;
+
+
+    public TaperRegister(ArrayList<Float> taperSurfaceArea, ArrayList<Float> taperVolume, ArrayList<Float> taperVolumeRatio) {
+        for (int i = 0; i < taperSurfaceArea.size(); i++) {
+            this.taperSurfaceArea = taperSurfaceArea;
+            this.taperVolume = taperVolume;
+            this.taperVolumeRatio = taperVolumeRatio;
+
+
+        }
     }
 
     @Override
-    public void update(float taperSurfaceArea,float taperVolume,float taperVolumeRatio , int id) {
-        taperSurfaceArea = this.taperSurfaceArea  ;
-        taperVolume = this.taperVolume  ;
-        taperVolumeRatio = this.taperVolumeRatio  ;
-        id = this.id;
+    public void update(ArrayList<Float> taperSurfaceArea, ArrayList<Float> taperVolume, ArrayList<Float> taperVolumeRatio) {
+         this.taperSurfaceArea =taperSurfaceArea;
+         this.taperVolume = taperVolume ;
+         this.taperVolumeRatio = taperVolumeRatio;
+
     }
-
-
-
 
 
 }

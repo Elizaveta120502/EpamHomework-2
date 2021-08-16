@@ -1,4 +1,5 @@
 package logic;
+
 import com.epam.jwd.entity.Point;
 import com.epam.jwd.entity.Taper;
 import com.epam.jwd.exception.InvalidInputDataException;
@@ -23,19 +24,20 @@ public class TaperVolumeTest {
 
     TaperVolume taperVolumeTest = new TaperVolume();
     TaperCalculationFactory factory = new TaperCalculationFactory();
-    //InputDataReader inputFactory = new InputDataReader();
+    InputDataReader inputDataReader = new InputDataReader();
     Taper taper = new Taper();
     Point point = new Point();
-//    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
-//    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
-//
-//
-//    @Test
-//    public void calculateTaperVolume() throws InvalidInputDataException {
-//        Assert.assertEquals(factory.getFigureCalculation(TAPER_VOLUME).calculate(taper,point),taperVolumeTest.calculate(taper,point));
-//
-//    }
+    Taper newTaper = new Taper(inputDataReader.readInputDataTaper(taper));
+    Point newPoint = new Point(inputDataReader.readInputDataPoint(point));
 
 
+    @Test
+    public void calculateTaperVolume() throws InvalidInputDataException, IOException, NotEnoughDataException {
+        Assert.assertEquals(factory.getFigureCalculation(TAPER_VOLUME).calculate(inputDataReader.readInputDataTaper(taper),
+                inputDataReader.readInputDataPoint(point)),
+                taperVolumeTest.calculate(inputDataReader.readInputDataTaper(taper),
+                        inputDataReader.readInputDataPoint(point)));
+
+    }
 
 }

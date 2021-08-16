@@ -19,8 +19,10 @@ public class TaperVolumeRatio implements FigureCalculation{
 
     }
 @Override
-    public float calculate(ArrayList<Taper> taperArrayList, ArrayList<Point>  pointArrayList){
+    public ArrayList<Float> calculate(ArrayList<Taper> taperArrayList, ArrayList<Point>  pointArrayList){
     float ratio = 0;
+
+    ArrayList<Float> taperVolumeRatioList = new ArrayList<Float>();
 
     for (int i = 0 , j =0; i < taperArrayList.size() -1 && j < pointArrayList.size()-1; i++,j++) {
         try{
@@ -37,9 +39,10 @@ public class TaperVolumeRatio implements FigureCalculation{
 
 
          ratio = (float) (RATIO_CONST - Math.pow((taperArrayList.get(i).getTaperTrancatedRadius()/taperArrayList.get(i).getTaperBaseRadius()),3));
-        LoggerProvider.getLOG().info("Volume ratio calculated correctly: "   + ratio +"\n" + TaperChangingClass.createTaperID(i));
+        LoggerProvider.getLOG().info("Volume ratio calculated correctly: "   + ratio +"\n");
+        taperVolumeRatioList.add(ratio);
     }
-        return ratio;
+        return taperVolumeRatioList;
     }
 
 }
