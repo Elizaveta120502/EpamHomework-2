@@ -1,10 +1,8 @@
 package com.epam.jwd.factory;
 
-import com.epam.jwd.entity.Taper;
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logic.*;
-
 
 import java.io.IOException;
 
@@ -13,7 +11,7 @@ public class TaperCalculationFactory {
     public TaperCalculationFactory() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
 
-    public FigureCalculation getFigureCalculation(CalculationTypes type) throws InvalidInputDataException{
+    public FigureCalculation getFigureCalculation(CalculationTypes type) throws InvalidInputDataException, IOException, NotEnoughDataException {
         FigureCalculation toReturn;
         switch (type) {
             case TAPER_SURFACE_AREA:
@@ -33,15 +31,6 @@ public class TaperCalculationFactory {
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 //    public TaperFactory() throws InvalidInputDataException, IOException, NotEnoughDataException {

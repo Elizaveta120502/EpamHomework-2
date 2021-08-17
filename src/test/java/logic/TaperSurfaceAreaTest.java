@@ -20,17 +20,20 @@ import static com.epam.jwd.logic.CalculationTypes.TAPER_SURFACE_AREA;
 public class TaperSurfaceAreaTest {
     public TaperSurfaceAreaTest() throws InvalidInputDataException, IOException, NotEnoughDataException {
     }
+
     TaperSurfaceArea taperSurfaceAreaTest = new TaperSurfaceArea();
     TaperCalculationFactory factory = new TaperCalculationFactory();
-    InputDataReader inputFactory = new InputDataReader();
+    InputDataReader inputDataReader = new InputDataReader();
     Taper taper = new Taper();
     Point point = new Point();
-    Taper newTaper = new Taper(inputFactory.readInputDataTaper(taper));
-    Point newPoint = new Point (inputFactory.readInputDataPoint(point));
+    Taper newTaper = new Taper(inputDataReader.readInputDataTaper(taper));
+    Point newPoint = new Point(inputDataReader.readInputDataPoint(point));
 
     @Test
-    public void calculateTaperSurfaceArea() throws InvalidInputDataException {
-        Assert.assertEquals(factory.getFigureCalculation(TAPER_SURFACE_AREA).calculate(taper,point),taperSurfaceAreaTest.calculate(taper,point));
+    public void calculateTaperSurfaceArea() throws InvalidInputDataException, IOException, NotEnoughDataException {
+        Assert.assertEquals(factory.getFigureCalculation(TAPER_SURFACE_AREA).calculate(inputDataReader.readInputDataTaper(taper),
+                inputDataReader.readInputDataPoint(point)), taperSurfaceAreaTest.calculate(inputDataReader.readInputDataTaper(taper),
+                inputDataReader.readInputDataPoint(point)));
 
     }
 
