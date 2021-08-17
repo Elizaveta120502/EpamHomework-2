@@ -1,10 +1,8 @@
 package com.epam.jwd.factory;
 
-import com.epam.jwd.entity.Taper;
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logic.*;
-
 
 import java.io.IOException;
 
@@ -23,7 +21,7 @@ public class TaperCalculationFactory {
                 toReturn = new TaperVolume();
                 break;
             case TAPER_VOLUME_RATIO:
-                toReturn =  new TaperVolumeRatio();
+                toReturn = new TaperVolumeRatio();
                 break;
             default:
                 throw new InvalidInputDataException();
@@ -33,15 +31,6 @@ public class TaperCalculationFactory {
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 //    public TaperFactory() throws InvalidInputDataException, IOException, NotEnoughDataException {

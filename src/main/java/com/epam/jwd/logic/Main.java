@@ -7,7 +7,6 @@ import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.factory.TaperCalculationFactory;
 import com.epam.jwd.logger.LoggerProvider;
 import com.epam.jwd.reader.InputDataReader;
-import com.epam.jwd.register.TaperRegister;
 
 import java.io.IOException;
 
@@ -42,13 +41,13 @@ public class Main {
                 inputDataReader.readInputDataPoint(point));
         LoggerProvider.getLOG().info("taper repo :" + taperRepository);
 
-      //  taperRepository.defineIntersectsTheOrigin(inputDataReader.readInputDataPoint(point));
+        //  taperRepository.defineIntersectsTheOrigin(inputDataReader.readInputDataPoint(point));
 //        taperRepository.certainRangeTaperParameter(taperChangingClass, factory, inputDataReader.readInputDataTaper(taper),
 //                inputDataReader.readInputDataPoint(point));
 //        taperRepository.findCoordinatesByID(taperChangingClass, factory, inputDataReader.readInputDataTaper(taper),
 //                inputDataReader.readInputDataPoint(point));
 
-        taperRepository.changeTaper(taperChangingClass,factory, inputDataReader.readInputDataTaper(taper),inputDataReader.readInputDataPoint(point));
+        taperRepository.changeTaper(taperChangingClass, factory, inputDataReader.readInputDataTaper(taper), inputDataReader.readInputDataPoint(point));
 
 
     }

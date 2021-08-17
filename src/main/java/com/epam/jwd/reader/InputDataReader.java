@@ -3,22 +3,16 @@ package com.epam.jwd.reader;
 import com.epam.jwd.entity.Point;
 import com.epam.jwd.entity.Taper;
 import com.epam.jwd.exception.InvalidFormatDataException;
-
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logger.LoggerProvider;
 
+import java.io.*;
+import java.util.ArrayList;
+
 
 public class InputDataReader implements Readable {
-    private static final String FILE_NAME = "C:/Epam/InputData1.txt";
+    private static final String FILE_NAME = "InputData.txt";
 //    private static InputDataReader inputDataReader = null;
 //
 //
@@ -108,8 +102,8 @@ public class InputDataReader implements Readable {
 
             String line;
 
-               while ((line = bufferedReader.readLine()) != null) {
-                  String[] split = line.split("/");
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] split = line.split("/");
                 if (line.matches("[a-zA-Z]") == false) {
                     try {
                         if (split.length == 11) {

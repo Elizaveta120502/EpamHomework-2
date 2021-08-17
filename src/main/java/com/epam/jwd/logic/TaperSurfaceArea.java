@@ -1,12 +1,10 @@
 package com.epam.jwd.logic;
 
-import com.epam.jwd.entity.Taper;
 import com.epam.jwd.entity.Point;
+import com.epam.jwd.entity.Taper;
 import com.epam.jwd.exception.InvalidInputDataException;
 import com.epam.jwd.exception.NotEnoughDataException;
 import com.epam.jwd.logger.LoggerProvider;
-
-import com.epam.jwd.register.TaperRegister;
 import com.epam.jwd.validation.TaperBaseOnPlain;
 import com.epam.jwd.validation.TaperExistence;
 

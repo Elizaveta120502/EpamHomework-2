@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public interface Readable {
-    ArrayList<Taper> readInputDataTaper (Taper taper) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
-    ArrayList<Point> readInputDataPoint (Point point) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
+    ArrayList<Taper> readInputDataTaper(Taper taper) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
+
+    ArrayList<Point> readInputDataPoint(Point point) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
 }

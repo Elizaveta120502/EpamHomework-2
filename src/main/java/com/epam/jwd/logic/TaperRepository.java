@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class TaperRepository implements Repository, Specification {
     ArrayList<TaperRegister> tapers;
-    private static int MIN_TAPER_BASE_RADIUS_RANGE = 2;
+    private static int MIN_TAPER_BASE_RADIUS_RANGE = 3;
     private static int MAX_TAPER_BASE_RADIUS_RANGE = 4;
 
     private static int FINDABLE_ID = 1;
@@ -34,6 +34,7 @@ public class TaperRepository implements Repository, Specification {
 
 
     public TaperRepository() {
+
         tapers = new ArrayList<>();
     }
 
@@ -61,23 +62,27 @@ public class TaperRepository implements Repository, Specification {
     }
 
     @Override
-    public void certainRangeTaperParameter(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
-                                           ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) {
-
+    public ArrayList<Taper> certainRangeTaperParameter(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
+                                                       ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException {
+        ArrayList<Taper> rangeBaseRadius = new ArrayList<>();
+        //ArrayList<Point> rangePoint = new ArrayList<>();
         for (int i = 0; i < newPointArrayList.size(); i++) {
             if (newTaperArrayList.get(i).getTaperBaseRadius() >= MIN_TAPER_BASE_RADIUS_RANGE && newTaperArrayList.get(i).getTaperBaseRadius() <= MAX_TAPER_BASE_RADIUS_RANGE) {
                 LoggerProvider.getLOG().info(newTaperArrayList.get(i));
+
+                rangeBaseRadius.add(newTaperArrayList.get(i));
+                // rangePoint.add(newPointArrayList.get(i));
             }
         }
+
+        return rangeBaseRadius;
     }
 
     @Override
-    public void findCoordinatesByID(TaperChangingClass taperChangingClass, TaperCalculationFactory factory,
-                                    ArrayList<Taper> newTaperArrayList, ArrayList<Point> newPointArrayList) {
+    public Point findCoordinatesByID(ArrayList<Point> newPointArrayList) {
 
 
-        LoggerProvider.getLOG().info(newTaperArrayList.get(FINDABLE_ID));
-        LoggerProvider.getLOG().info(newPointArrayList.get(FINDABLE_ID));
+        return newPointArrayList.get(FINDABLE_ID);
 
 
     }
@@ -112,13 +117,15 @@ public class TaperRepository implements Repository, Specification {
     }
 
     @Override
-    public void findAbscissaAxis1MultiplyFive(ArrayList<Point> pointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException {
-        if (pointArrayList.get(INDEX_ABSCISSA_AXIS_1).getAbscissaAxis1() % 5 == 0) {
-            for (int i = 0; i < pointArrayList.size(); i++) {
-                LoggerProvider.getLOG().info(tapers.get(i));
+    public ArrayList<Point> findAbscissaAxis1MultiplyFive(ArrayList<Point> pointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException {
+        ArrayList<Point> multiplyFiveAbscissaAxis1 = new ArrayList<>();
+        for (int i = 0; i < pointArrayList.size(); i++) {
+            if (pointArrayList.get(INDEX_ABSCISSA_AXIS_1).getAbscissaAxis1() % 5 == 0) {
+
+                multiplyFiveAbscissaAxis1.add(pointArrayList.get(i));
             }
         }
-
+        return multiplyFiveAbscissaAxis1;
 
     }
 

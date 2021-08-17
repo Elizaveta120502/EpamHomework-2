@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public interface Specification {
 
-    void findAbscissaAxis1MultiplyFive(ArrayList<Point> pointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException;
+    ArrayList<Point> findAbscissaAxis1MultiplyFive(ArrayList<Point> pointArrayList) throws InvalidInputDataException, IOException, NotEnoughDataException;
 
     void findAbscissaAxisLessThenFive(ArrayList<Point> pointArrayList);
 

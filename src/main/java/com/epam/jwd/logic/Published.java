@@ -1,6 +1,5 @@
 package com.epam.jwd.logic;
 
-import com.epam.jwd.register.Subscriber;
 import com.epam.jwd.register.TaperRegister;
 
 
@@ -10,7 +9,6 @@ public interface Published {
     void unsubscribe(TaperRegister taperRegister);
 
     void notifySubscriber(TaperRegister taperRegister);
-
 
 
 }

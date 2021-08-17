@@ -1,12 +1,11 @@
 package com.epam.jwd.register;
 
-import com.epam.jwd.logic.Published;
-
 import java.util.ArrayList;
 
 public class TaperRegister implements Subscriber {
     private ArrayList<Float> taperSurfaceArea;
     private ArrayList<Float> taperVolume;
+
 
     public ArrayList<Float> getTaperSurfaceArea() {
         return taperSurfaceArea;
@@ -24,20 +23,19 @@ public class TaperRegister implements Subscriber {
 
 
     public TaperRegister(ArrayList<Float> taperSurfaceArea, ArrayList<Float> taperVolume, ArrayList<Float> taperVolumeRatio) {
-        for (int i = 0; i < taperSurfaceArea.size(); i++) {
-            this.taperSurfaceArea = taperSurfaceArea;
-            this.taperVolume = taperVolume;
-            this.taperVolumeRatio = taperVolumeRatio;
+
+        this.taperSurfaceArea = taperSurfaceArea;
+        this.taperVolume = taperVolume;
+        this.taperVolumeRatio = taperVolumeRatio;
 
 
-        }
     }
 
     @Override
     public void update(ArrayList<Float> taperSurfaceArea, ArrayList<Float> taperVolume, ArrayList<Float> taperVolumeRatio) {
-         this.taperSurfaceArea =taperSurfaceArea;
-         this.taperVolume = taperVolume ;
-         this.taperVolumeRatio = taperVolumeRatio;
+        this.taperSurfaceArea = taperSurfaceArea;
+        this.taperVolume = taperVolume;
+        this.taperVolumeRatio = taperVolumeRatio;
 
     }
 

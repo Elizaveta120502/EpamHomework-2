@@ -5,12 +5,11 @@ import com.epam.jwd.logger.LoggerProvider;
 
 public class InvalidInputDataException extends Exception {
 
-    public InvalidInputDataException()
-    {
+    public InvalidInputDataException() {
         super();
     }
 
-    public CharSequence invalidInputDataExceptionLOG () {
+    public CharSequence invalidInputDataExceptionLOG() {
 
         LoggerProvider.getLOG().error("InvalidInputDataException:Input data is incorrect");
         return null;

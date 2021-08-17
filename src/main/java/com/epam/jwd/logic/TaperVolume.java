@@ -32,7 +32,7 @@ public class TaperVolume implements FigureCalculation {
 
         ArrayList<Float> taperVolumeList = new ArrayList<Float>();
 
-        for (int i = 0, j = 0; i < taperArrayList.size() -1  && j < pointArrayList.size() -1 ; i++, j++) {
+        for (int i = 0, j = 0; i < taperArrayList.size() - 1 && j < pointArrayList.size() - 1; i++, j++) {
             try {
                 new TaperBaseOnPlain().defineTaperBasePlane(taperArrayList.get(i), pointArrayList.get(j));
             } catch (InvalidInputDataException e) {
@@ -47,7 +47,7 @@ public class TaperVolume implements FigureCalculation {
 
 
             volume = (float) (PI * Math.pow(taperArrayList.get(i).getTaperBaseRadius(), 2) * taperArrayList.get(i).getTaperHeight());
-            LoggerProvider.getLOG().info("Volume calculated correctly:  " + volume  +"\n" );
+            LoggerProvider.getLOG().info("Volume calculated correctly:  " + volume + "\n");
             taperVolumeList.add(volume);
 
         }
