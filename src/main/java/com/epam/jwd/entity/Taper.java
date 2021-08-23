@@ -1,11 +1,6 @@
 package com.epam.jwd.entity;
 
-import com.epam.jwd.exception.InvalidInputDataException;
-import com.epam.jwd.exception.NotEnoughDataException;
-import com.epam.jwd.reader.Readable;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Taper {
@@ -21,13 +16,12 @@ public class Taper {
         this.taperTrancatedRadius = taperTrancatedRadius;
     }
 
-    public Taper(Taper readInputDataTaper) {
-    }
-
     public Taper() {
 
     }
 
+    public Taper(ArrayList<Taper> taperArrayList) {
+    }
 
 
     public float getTaperBaseRadius() {

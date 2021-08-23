@@ -7,8 +7,10 @@ import com.epam.jwd.exception.NotEnoughDataException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public interface Readable {
-    Taper readInputDataTaper (Taper taper) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
-    Point readInputDataPoint (Point point) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
+    ArrayList<Taper> readInputDataTaper(Taper taper) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
+
+    ArrayList<Point> readInputDataPoint(Point point) throws FileNotFoundException, IOException, InvalidInputDataException, NotEnoughDataException;
 }
